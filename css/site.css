@@ -5,11 +5,23 @@
     --cf-highlight: #fae100;
 }
 
+.navbar .nav-item a {
+    color: var(--cg-light);
+}
+
+.navbar .nav-item .nav-item a:hover {
+    color: var(--cf-highlight) !important;
+}
+
+.btn-warning {
+    background-color: var(--cf-highlight);
+    border-color: var(--cf-highlight);
+}
+
 /* changes font to roboto, light */
 html,
 body {
-    font-family: 'Roboto', sans-serif;
-    color: var(--cf-light);
+    height: 100%;
 }
 
 /* idk what this does*/
@@ -28,6 +40,7 @@ body {
 .navbar .img-fluid {
     max-width: 3rem;
     margin-right: 5px;
+    color: var(--cf-light);
 }
 
 /* start sticky footer */
@@ -36,6 +49,10 @@ body {
     min-height: 100%;
     background-color: var(--cf-darkblue);
     height: 100%;
+    font-family: 'Roboto', sans-serif;
+    color: var(--cf-light);
+    display: flex;
+    flex-direction: column;
 }
 
 main {
@@ -47,93 +64,93 @@ footer {
     flex-shrink: 0;
 }
 
-/* mobile view */
-.BG {
-    background-image: url(/img/LandingPage_576.png);
-    background-repeat: no-repeat;
-    background-size: cover;
-    min-height: 100%;
+
+#cta-container {
+    height: 100%;
     display: flex;
-    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+
+/* mobile view */
+body {
+    background-image: url(/img/LandingPage_576.png);
+    background-position: top center;
+    background-repeat: no-repeat;
+    
+    
 }
 
 .title {
     font-family: 'Racing Sans One', cursive;
-    font-size: 2.3rem;
-    line-height: 1.7rem;
-    letter-spacing: 0.05rem;
+    font-size: 2.5rem;
+    line-height: 2rem;
 }
 
 .subtitle {
     font-family: 'Fira Sans', sans-serif;
     font-size: 1rem;
     font-weight: 300;
-}
-
-.vert-center-text {
-    margin-top: 40rem;
-    flex-direction: column;
-    margin-left: 2rem;
-    width: 100%;
+    letter-spacing: .04rem;
 }
 
 
 /* // Small devices (landscape phones, 576px and up) */
 @media (min-width: 576px) {
-    .BG {
+    body {
         background-image: url(/img/LandingPage_768.png);
-        background-position: right -15rem center;
+        background-position: top center;
     }
 
+
     .title {
-        font-size: 4rem;
-        line-height: 2.5rem;
+        font-size: 3.5rem;
+        line-height: 3rem;
     }
 
     .subtitle {
-        font-size: 1.7rem;
+        font-size: 1.3rem;
         line-height: 1.5rem;
-        font-weight: 300;
+        font-weight: 200;
+        letter-spacing: .1rem;
     }
 
-    .vert-center-text {
-        margin-top: 15rem;
+    #cta-container {
+        padding-bottom: 3rem;
     }
 }
 
 /* // Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) {
-    .BG {
+    body {
         background-image: url(/img/LandingPage_992.png);
-        background-position: right -13rem center;
+        background-position: top-right;
     }
 
     .title {
         font-size: 4rem;
         line-height: 2.5rem;
-
     }
 
     .subtitle {
-        font-size: 1.7rem;
+        font-size: 1.5rem;
         line-height: 1.5rem;
         font-weight: 300;
     }
 
-    .vert-center-text {
-        margin-top: 40rem;
-        flex-direction: column;
-        margin-left: 2rem;
-        width: 100%;
+    #cta-container {
+        padding-bottom: 0rem;
+        justify-content: start;
+        align-items: center;
+
     }
-    
 }
 
 /* // Large devices (desktops, 992px and up) */
 @media (min-width: 992px) {
-    .BG {
+    body {
         background-image: url(/img/LandingPage_1200.png);
-        background-position: right 0px center;
     }
 
     .title {
@@ -148,17 +165,13 @@ footer {
         letter-spacing: 0.1rem;
         
     }
-
-    .vert-center-text {
-        margin-top: 12rem;
-        margin-left: 1rem;
-    }
 }
 
 /* // X-Large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) {
-    .BG {
+    body {
         background-image: url(/img/LandingPage_1920.png);
+        background-size: cover;
     }
 
     .title {
